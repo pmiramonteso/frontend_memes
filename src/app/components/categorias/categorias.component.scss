@@ -1,0 +1,26 @@
+.categorias-container {
+  padding: 2rem;
+  border-radius: 12px;
+
+  .card {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  .selected {
+    border: 2px solid yellow;
+    box-shadow: 0 0 12px yellow;
+  }
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+  
