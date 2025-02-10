@@ -1,3 +1,4 @@
 export const environment = {
-    endpoint: 'http://localhost:3000/'
+  production: false,
+  endpoint: 'http://localhost:3000/'
 };
