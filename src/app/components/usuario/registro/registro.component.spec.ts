@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RegistroComponent } from './registro.component';
 
 describe('RegistroComponent', () => {
@@ -8,7 +8,9 @@ describe('RegistroComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RegistroComponent]
+      imports: [RegistroComponent,
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
 

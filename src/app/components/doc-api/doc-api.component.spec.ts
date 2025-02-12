@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { DocApiComponent } from './doc-api.component';
+import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 describe('DocApiComponent', () => {
   let component: DocApiComponent;
@@ -8,7 +10,19 @@ describe('DocApiComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [DocApiComponent]
+      imports: [DocApiComponent,
+        HttpClientTestingModule
+      ],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              params: { id: '123' }
+            }
+          }
+        }
+      ]
     })
     .compileComponents();
 

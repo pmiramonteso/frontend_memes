@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AdminMemesComponent } from './admin-memes.component';
 
 describe('AdminMemesComponent', () => {
@@ -8,7 +8,9 @@ describe('AdminMemesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AdminMemesComponent]
+      imports: [AdminMemesComponent,
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
 

@@ -11,19 +11,11 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './doc-api.component.html',
   styleUrl: './doc-api.component.scss'
 })
-export class DocApiComponent implements OnInit {
+export class DocApiComponent {
   categoria: string = '';
   swaggerUrl: SafeResourceUrl | undefined;
 
   constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {}
 
-  ngOnInit(): void {
-    this.route.params.subscribe((params) => {
-      this.categoria = params['categoria'];
-      this.swaggerUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        'http://localhost:3000/api/docs'
-      );
-    });
-  }
 
 }

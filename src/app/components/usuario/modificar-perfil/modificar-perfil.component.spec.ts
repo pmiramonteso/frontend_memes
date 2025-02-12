@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ModificarPerfilComponent } from './modificar-perfil.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { ModificarPerfil } from './modificar-perfil.component';
 
 describe('ModificarPerfilComponent', () => {
-  let component: ModificarPerfilComponent;
-  let fixture: ComponentFixture<ModificarPerfilComponent>;
+  let component: ModificarPerfil;
+  let fixture: ComponentFixture<ModificarPerfil>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModificarPerfilComponent]
+      imports: [ModificarPerfil,
+        HttpClientTestingModule
+      ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ModificarPerfilComponent);
+    fixture = TestBed.createComponent(ModificarPerfil);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

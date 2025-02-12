@@ -4,7 +4,7 @@
     @for(categoria of categorias; track categoria) {
       <div
         (click)="seleccionarCategoria(categoria)"
-       [class.selected]="categoriaSeleccionada === categoria.nombre"
+       [class.selected]="categoriaSeleccionada?.nombre === categoria.nombre"
         class="card hover:scale-105 transition-transform cursor-pointer rounded-lg p-4 text-center shadow-lg text-white"
         [ngClass]="categoria.degradado ? categoria.degradado : 'bg-gradient-to-r from-teal-400 to-teal-600'"
       >

@@ -18,14 +18,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       withCredentials: true
     });
   }
-
-  console.log('Petición saliente:', {
-    url: clonedReq.url,
-    withCredentials: clonedReq.withCredentials,
-    headers: clonedReq.headers.keys(),
-    token: token ? 'presente' : 'ausente'
-  });
-
   return next(clonedReq).pipe(
     tap({
       next: (event) => console.log('Respuesta:', event),
